@@ -20,5 +20,5 @@ return [
     'password' => 'Password',
     'remember' => 'Remember Me',
     'forgot' => 'Forgotten Password',
-
+    
 ];

@@ -1,0 +1,14 @@
+{
+    "resend verify email": "gửi lại email xác nhận",
+    "input your email": "nhập email của bạn",
+    "resend verify email success": "gửi lại email xác nhận thành công",
+    "verify email error": "xác nhận email bị lỗi",
+    "verfiy email": "Xác Nhận Email",
+    "Hello": "Xin Chào",
+    ":greet :name": ":greet :name",
+    "Please click the button below to verify your email address!": "Vui lòng click vào nút bên dưới để xác nhận email của bạn",
+    "Thank you for using our application!": "Cảm ơn bạn đã sử dụng dịch vụ của chúng tôi!",
+    "All right reserved.": "Đã đăng ký bản quyền.",
+    "If you’re having trouble clicking the :action button, copy and paste the URL below into your web browser": "Nếu bạn gặp rắc rối khi nhấn nút :action, copy và paste link bên dưới vào trình duyệt của bạn",
+    "regards": "Trân trọng,"
+}

@@ -1,0 +1,14 @@
+{
+    "resend verify email": "resend verify email",
+    "input your email": "input your email",
+    "resend verify email success": "resend verify email success",
+    "verify email error": "verify email error",
+    "verify email": "Verify Email",
+    "Hello": "Hello",
+    ":greet :name": ":greet :name",
+    "Please click the button below to verify your email address!": "Please click the button below to verify your email address!",
+    "Thank you for using our application!": "Thank you for using our application!",
+    "All right reserved.": "All right reserved.",
+    "If you’re having trouble clicking the :action button, copy and paste the URL below into your web browser": "If you’re having trouble clicking the :action button, copy and paste the URL below into your web browser",
+    "regards": "Regards,"
+}

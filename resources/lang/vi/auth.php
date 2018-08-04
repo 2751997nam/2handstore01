@@ -9,5 +9,5 @@ return [
     'password' => 'Mật khẩu',
     'remember' => 'Ghi nhớ',
     'forgot' => 'Quên mật khẩu',
-
+    
 ];
