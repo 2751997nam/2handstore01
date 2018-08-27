@@ -1,0 +1,13 @@
+{
+  "name": "sufee-admin-dashboard",
+  "homepage": "https://github.com/puikinsh/sufee-admin-dashboard",
+  "_release": "80984b4e4f",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "80984b4e4f650b57cd7e95c1f52cf044449ffeb3"
+  },
+  "_source": "https://github.com/puikinsh/sufee-admin-dashboard.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/puikinsh/sufee-admin-dashboard.git"
+}

@@ -18,7 +18,7 @@ class UnseenMessage
      */
     public function handle($request, Closure $next)
     {
-        $id = Auth::check() ? Auth::user()->id : '';
+        $id = Auth::check() ? Auth::user()->id : null;
         $message = new MessageRepository();
         $unseenMessage = $message->unseenMessage($id);
         $conversation = $message->clientConversation($id);

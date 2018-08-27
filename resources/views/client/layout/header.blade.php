@@ -50,7 +50,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-2 text-center">
-                    <a href="{{ route('index') }}"><img src="{{ $site_info['logo'] }}" alt="" class="logo"></a>
+                    <a href="{{ route('index') }}"><img src="{{ asset($site_info['logo']) }}" alt="" class="logo"></a>
                 </div>
                 <div class="col-md-9">
 

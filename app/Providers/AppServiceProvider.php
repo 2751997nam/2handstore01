@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Option;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
@@ -16,6 +17,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        URL::forceScheme('https');
         Schema::defaultStringLength(191);
 
         $site_info = Option::getOptions();
