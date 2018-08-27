@@ -41,6 +41,11 @@
         "laravel": {
             "dont-discover": [
             ]
+        },
+        "heroku": {
+            "complie": [
+                "chmod 777 /storage/*"
+            ]
         }
     },
     "scripts": {
@@ -53,6 +58,10 @@
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover"
+        ],
+        "compile": [
+            "chmod -R 777 storage/",
+            "chmod -R 777 public/"
         ]
     },
     "config": {
