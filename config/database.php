@@ -16,9 +16,13 @@ return [
     'paginate' => 20,
     'homepaginate' => 36,
     'autocomplete' => 5,
-    'verify' => 'verify',
+    'verified' => 'verified',
     'unverify' => 'unverify',
     'blocked' => 'blocked',
+    'seen' => 1,
+    'unseen' => 0,
+    'admin' => 1,
+    'customer' => 2,
     
     'default' => env('DB_CONNECTION', 'mysql'),
 

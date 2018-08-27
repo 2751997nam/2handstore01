@@ -58,7 +58,7 @@ abstract class EloquentRepository implements RepositoryInterface
         return $this;
     }
 
-    private function loadWhere()
+    public function loadWhere()
     {
         if ($this->where && count($this->where)) {
             foreach ($this->where as $where) {

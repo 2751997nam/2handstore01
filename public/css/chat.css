@@ -1,0 +1,64 @@
+.box-chat {
+    background-color: rgb(211, 211, 211);
+    height: 400px;
+    overflow-y: scroll;
+}
+
+.chat {
+    position: fixed;
+    right: 1rem;
+    bottom: 0;
+    width: 350px;
+    padding: 0;
+    box-shadow: 1px 1px black;
+    z-index: 999999;
+}
+
+.chat-title {
+    font-size: 1.5em;
+}
+
+.panel-heading h4 {
+    margin: 0;
+}
+
+.message {
+    margin: 3%;
+}
+
+.toggle-chat {
+    bottom: -438px;
+}
+
+.arrow {
+    font-weight: bold;
+    margin-right: 15px;
+    margin-top: 15px;
+}
+
+.arrow-up {
+    margin-top: 1px;
+    transform: rotate(180deg);
+}
+
+.message-div{
+    overflow: auto;
+}
+
+.message-div p {
+    word-break: break-all;
+}
+
+.to-message {
+    background-color: dodgerblue;
+    color: white;
+    border-radius:7px;
+    padding: 5px;
+}
+
+.from-message {
+    background-color: rgb(161, 161, 161);
+    color: white;
+    border-radius:7px;
+    padding: 5px;
+}

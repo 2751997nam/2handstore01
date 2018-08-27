@@ -160,7 +160,6 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
-        \App\Providers\ViewServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class
     ],
 
