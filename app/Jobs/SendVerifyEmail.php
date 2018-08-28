@@ -11,7 +11,7 @@ use App\User;
 use App\Mail\ConfirmEmail;
 use Illuminate\Support\Facades\Mail;
 
-class SendVerifyEmail implements ShouldQueue
+class SendVerifyEmail
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
