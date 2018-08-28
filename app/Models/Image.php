@@ -20,6 +20,11 @@ class Image extends Model
     public function delete()
     {
         parent::delete();
-        Storage::delete('public/' . $this->file_name);
+        Storage::delete(config('site.product') . $this->file_name);
+    }
+
+    public function getImage()
+    {
+        return config('site.product') . $this->file_name;
     }
 }

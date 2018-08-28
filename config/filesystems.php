@@ -59,7 +59,8 @@ return [
 
         'option' => [
             'driver' => 'local',
-            'root' => public_path() . '/site',
+            'root' => public_path(),
+            'url' => env('APP_URL') . '/storage',
         ],
 
         's3' => [

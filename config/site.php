@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 return [
 
@@ -14,15 +14,17 @@ return [
         'phone',
         'title'
     ],
-    'folder' => 'public/site',
+    'folder' => 'storage/site/',
     'assets' => [
         'logo',
         'favicon'
     ],
     'slider' => 'public/slides',
-    'thumbpath' => 'public/thumbnails',
-    'active' => 1,
     'discard' => -1,
     'inactive' => 0,
+    'product' => 'storage/product/',
+    'slider' => 'storage/slides/',
+    'avatar' => 'storage/avatar/',
+    'thumbpath' => 'storage/thumbnails/',
+    'active' => 1
 ];
-

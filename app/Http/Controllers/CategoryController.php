@@ -53,7 +53,7 @@ class CategoryController extends Controller
         if (file_exists($file)) {
             $fileName = md5(str_random(15)) . $fileName;
         }
-        $path = $file->storeAs($filePath, $fileName);
+        $path = $file->storeAs(config('site.thumbnail') . $filePath, $fileName, 'option');
 
         return $path;
     }

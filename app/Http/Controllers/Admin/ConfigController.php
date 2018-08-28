@@ -32,7 +32,6 @@ class ConfigController extends Controller
                 $option = Option::where('key', $key)->first();
                 $name = Storage::disk('public')->delete(config('site.folder') . '/' . $option->value);
                 $request->{$key}->store(config('site.folder'), 'option');
-                // Storage::disk('public')->put($value, $request->{$key}, 'public');
                 $option->update([
                     'value' => $request->{$key}->hashName()
                 ]);

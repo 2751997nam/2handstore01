@@ -36,7 +36,7 @@ class SliderController extends Controller
         );
 
         $image = $request->image->hashName();
-        $request->image->store(config('site.slider'));
+        $request->image->store(config('site.slider'), 'option');
         Slider::create([
             'image' => $image,
             'link' => $request->link
@@ -79,7 +79,7 @@ class SliderController extends Controller
         if ($request->has('image')) {
             Storage::delete(config('site.slider') . '/' . $slider->image);
             $image = $request->image->hashName();
-            $request->image->store(config('site.slider'));
+            $request->image->store(config('site.slider'), 'option');
             $data['image'] = $image;
         }
         $slider->update($data);

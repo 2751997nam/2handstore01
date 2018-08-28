@@ -31,7 +31,7 @@ class Category extends Model
 
     public function getThumbnail()
     {
-        return asset(Storage::url($this->thumbnail));
+        return url($this->thumbnail);
     }
 
     public function scopeParentCategories($query)

@@ -34,7 +34,7 @@
                     </a>   
                     @foreach ($product->images as $image)
                         <a href="#" class="item">
-                            <img class="item-thumb" src="{{ asset(Storage::url($image->file_name)) }}" alt="product image 1">
+                            <img class="item-thumb" src="{{ url($image->getImage()) }}" alt="product image 1">
                         </a>                       
                     @endforeach
                 </div>

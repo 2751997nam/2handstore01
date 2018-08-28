@@ -1,8 +1,6 @@
 $(document).ready(function () {
     var channel = $('channel').text();
 
-    Pusher.logToConsole = true;
-
     var pusher = new Pusher('350836dd3d57ea3538c6', {
         cluster: 'ap1',
         encrypted: true

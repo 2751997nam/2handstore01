@@ -41,7 +41,7 @@ class ProductController extends Controller
         $data['thumbnail'] = 'default.jpg';
         if ($request->has('thumbnail')) {
             $data['thumbnail'] = $request->thumbnail->hashName();
-            $request->thumbnail->store(config('site.thumbpath'));
+            $request->thumbnail->store(config('site.thumbpath'), 'option');
         }
 
         $product = $request->user()->products()->create($data);
@@ -72,7 +72,7 @@ class ProductController extends Controller
             $imageModel = Image::create([
                 'file_name' => $image->hashName(),
             ]);
-            $image->store('public');
+            $image->store(config('site.product'), 'option');
             $data[] = $imageModel->id;
         }
 
