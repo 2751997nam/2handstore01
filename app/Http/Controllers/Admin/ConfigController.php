@@ -30,8 +30,9 @@ class ConfigController extends Controller
         foreach ($options as $key => $value) {
             if (in_array($key, $assets)) {
                 $option = Option::where('key', $key)->first();
-                $name = Storage::delete(config('site.folder') . '/' . $option->value);
-                $request->{$key}->store(config('site.folder'));
+                $name = Storage::disk('public')->delete(config('site.folder') . '/' . $option->value);
+                $request->{$key}->store(config('site.folder'), 'option');
+                // Storage::disk('public')->put($value, $request->{$key}, 'public');
                 $option->update([
                     'value' => $request->{$key}->hashName()
                 ]);

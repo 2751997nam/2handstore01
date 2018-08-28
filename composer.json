@@ -44,7 +44,8 @@
         },
         "heroku": {
             "complie": [
-                "chmod 777 /storage/*"
+                "chmod 777 /storage/*",
+                "chmod 777 public/storage/"
             ]
         }
     },
@@ -60,9 +61,9 @@
             "@php artisan package:discover"
         ],
         "compile": [
-            "chmod -R 777 storage/",
-            "chmod -R 777 public/"
+            "chmod -R 777 storage/*"
         ]
+        
     },
     "config": {
         "preferred-install": "dist",
