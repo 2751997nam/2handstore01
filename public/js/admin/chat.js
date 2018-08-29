@@ -89,7 +89,7 @@ function sendMessage()
     appendMessage(message);
     var url = element.attr('data-url');
     var from = element.attr('data-id');
-    var to = element.siblings('button').attr('data-id')
+    var to = element.siblings('button').attr('data-id');
     $.ajax({
         method: 'post',
         url: url,

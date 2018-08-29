@@ -122,7 +122,7 @@ class User extends Authenticatable
 
     public function getAvatar()
     {
-        return url($this->avatar != null ? $this->avatar : 'storage/images/img_avatar.png');
+        return url($this->avatar != null ? $this->avatar : config('filesystems.avatar'));
     }
 
     public function scopeVerified($query)

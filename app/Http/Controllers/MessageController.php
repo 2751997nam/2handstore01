@@ -28,8 +28,8 @@ class MessageController extends Controller
         $user = Auth::user();
 
         $messages = $this->messageRepository->lastestMessages($user->id);
-
-        $conversation = $this->messageRepository->conversation($user->id, $messages[0]->from);
+        $conversation= [];
+        count($messages) > 0 && $conversation = $this->messageRepository->conversation($user->id, $messages[0]->from);
         
         return view('admin.chat.index', compact('messages', 'conversation', 'user'));
     }

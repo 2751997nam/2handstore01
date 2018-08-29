@@ -59,7 +59,7 @@
                             
                             {!! Form::button('<i class="fa fa-paper-plane-o" aria-hidden="true"></i>', [
                                 'class' => 'msg_send_btn',
-                                'data-id' => $messages[0]->from,
+                                'data-id' => count($messages) > 0 ? $messages[0]->from : '',
                                 'onclick' => 'sendMessage()',
                             ]) !!}
                         </div>

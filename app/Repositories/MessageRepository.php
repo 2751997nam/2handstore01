@@ -17,7 +17,7 @@ class MessageRepository extends EloquentRepository
         
         return $this->model->where('to', $id)
         ->whereIn('created_at', function ($query) {
-            $query->select(DB::raw('max(`created_at`)'))
+            $query->select(DB::raw('max(created_at)'))
                     ->from('messages')
                     ->groupBy('from');
         })
