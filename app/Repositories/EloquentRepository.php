@@ -94,6 +94,13 @@ abstract class EloquentRepository implements RepositoryInterface
 
         return $this->model->find($id, $columns);
     }
+    
+    public function findOrFail($id, $columns = ['*'])
+    {
+        $this->makeModel();
+
+        return $this->model->findOrFail($id, $columns);
+    }
 
     public function create(array $data)
     {

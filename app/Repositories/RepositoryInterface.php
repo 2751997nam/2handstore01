@@ -18,6 +18,8 @@ interface RepositoryInterface
 
     public function find($id, $columns = ['*']);
 
+    public function findOrFail($id, $columns = ['*']);
+
     public function create(array $data);
 
     public function update(array $data);

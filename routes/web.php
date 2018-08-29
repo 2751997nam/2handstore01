@@ -128,7 +128,11 @@ Route::group([
         Route::post('/comment/{id}', 'CommentController@store')->name('comment')->middleware('auth');
         Route::get('/search', 'ProductController@search')->name('search');
         Route::get('/results', 'ProductController@result')->name('search_results');
-        Route::get('/province', 'ProductController@getSearchProvince')->name('get_search_rovince');
+        Route::get('/province', 'ProductController@getSearchProvince')->name('get_search_province'); 
+        Route::get('get-image/{product}', 'Client\ProductController@getImages')->name('get-image');
+        Route::post('delete-image', 'Client\ProductController@deleteImage')->name('delete-image');
+        Route::put('{product}/update', 'Client\ProductController@update')->name('update');
+        Route::put('quantity', 'Client\ProductController@changeQuantity')->name('quantity');
     });
     Route::post('/report/{id}', 'ReportController@store')->name('report.store')->middleware('auth');
     Route::delete('/comment/destroy/{id}', 'CommentController@clientDestroy')->name('destroy_comment')->middleware('auth');
@@ -156,6 +160,7 @@ Route::group([
     ], function () {
         Route::get('/', 'Client\ProductController@getMyProducts')->name('index');
         Route::put('/{product}', 'Client\ProductController@changeStatus')->name('status');
+        Route::get('/{product}/edit', 'Client\ProductController@edit')->name('edit');
     });
     Route::group([
         'prefix' => '/purchases',

@@ -19,6 +19,7 @@ class Product extends Model
         'province_id',
         'user_id',
         'status',
+        'quantity'
     ];
 
     /**

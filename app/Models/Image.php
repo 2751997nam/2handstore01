@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Storage;
 
 class Image extends Model
 {
@@ -14,5 +15,11 @@ class Image extends Model
     public function product()
     {
         return $this->belongsTo('App\Product');
+    }
+
+    public function delete()
+    {
+        parent::delete();
+        Storage::delete('public/' . $this->file_name);
     }
 }

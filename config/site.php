@@ -3,6 +3,7 @@
 return [
 
     'thumbnail' => 'storage/thumbnails/',
+    'deletethumb' => 'thumbnails/',
     'siteinfo' => [
         'address',
         'description',

@@ -9,9 +9,24 @@ use App\Image;
 use App\Category;
 use App\City;
 use App\Http\Requests\ProductRequest;
+use Storage;
+use App\Repositories\ProductRepository;
+use App\Repositories\ImageRepository;
 
 class ProductController extends Controller
 {
+    private $product;
+    private $image;
+
+    public function __construct(
+        ProductRepository $productRepository, 
+        ImageRepository $imageRepository
+    )
+    {
+        $this->product = $productRepository;
+        $this->image = $imageRepository;
+    }
+
     public function postProduct()
     {
         $categories = Category::convertToArray();
@@ -87,5 +102,81 @@ class ProductController extends Controller
         $orders = $request->user()->getMyPurchases();
 
         return view('client.user.mypurchases', compact('orders'));
+    }
+
+    public function edit(Product $product)
+    {
+        $this->authorize('update', $product);
+        $categories = Category::convertToArray();
+        $cities = City::convertToArray();
+        
+        return view('client.product.edit', compact('categories', 'cities', 'product'));
+    }
+
+    public function update(ProductRequest $request, Product $product)
+    {
+        $this->authorize('update', $product);
+
+        $data = $request->except('_token', '_method', 'city', 'image_data');
+        if ($request->has('thumbnail')) {
+            if ($product->thumbnail != 'default.jpg') {
+                Storage::delete(config('deletethumb') . $product->thumbnail);
+            }
+            $request->thumbnail->store(config('site.thumbpath'));
+            $data['thumbnail'] = $request->thumbnail->hashName();
+        }
+
+        $this->product->update($data, $product->id);
+
+        if ($request->has('image_data') && $request->image_data != null) {
+            $imageIds = explode(',', $request->image_data);
+            if (count($imageIds) > 0) {
+                $this->image->setProductId($imageIds, $product->id);
+            }
+        }
+
+        return redirect()->route('client.myproduct.index');
+    }
+
+    public function getImages(Product $product)
+    {
+        $data = [];
+        foreach ($product->images as $image) {
+            $data[] = [
+                'id' => $image->id,
+                'name' => $image->name,
+                'url' => asset('storage/' . $image->file_name),
+            ];
+        }
+
+        return response()->json($data);
+    }
+
+    public function deleteImage(Request $request)
+    {
+        $image = $this->image->findOrFail($request->id);
+        $image->delete();
+
+        return response()->json([
+            'status' => 'success'
+        ]);
+    }
+
+    public function changeQuantity(Request $request)
+    {
+        $this->validate(
+            $request,
+            [
+                'id' => 'required|exists:products,id',
+                'quantity' => 'required|numeric|min:0'
+            ]
+        );
+        $product = $this->product->findOrFail($request->id);
+        $this->authorize('update', $product);
+        $this->product->update([
+            'quantity' => $request->quantity
+        ], $request->id);
+
+        return redirect()->back();
     }
 }

@@ -88,5 +88,8 @@
     "Other": "Khác",
     "Your product was purchased:": "Sản phẩm của bạn đã được đặt hàng:",
     "Undefined" : "Chưa xác định",
-    "Notification": "Thông Báo"
+    "Notification": "Thông Báo",
+    "Quantity": "Số lượng",
+    "Change Quantity": "Thay đổi số lượng",
+    "Out of stock": "Hết hàng"
 }

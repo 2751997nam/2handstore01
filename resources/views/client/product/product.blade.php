@@ -50,6 +50,15 @@
                         <strong>{{ $product->money }}</strong>
                     </span>
                 </div>
+                <div>
+                    @if($product->quantity > 0)
+                        <b>@lang('Quantity'):</b> {{ $product->quantity }}
+                    @else
+                        <span class="btn btn-secondary">
+                            @lang('Out of stock')
+                        </span>
+                    @endif
+                </div>
             </div>
             <div class="product-detail">
                 <div class="product-title">
@@ -104,14 +113,14 @@
             <div class="product-infor">
                 <table>
                     <tr>
-                        <td class="product-infor-lable">@lang('client.category.category')</td>
+                        <td class="product-infor-lable"><b>@lang('client.category.category')</b></td>
                         <td class="product-infor-value">
                             <span><a href="">{{ $product->category->name }}</a></span>
                         </td>
                     </tr>
                     <tr>
                         <td class="product-infor-lable">
-                            @lang('client.product.brand')
+                            <b>@lang('client.product.brand')</b>
                         </td>
                         <td class="product-infor-value">
                             <a href="#">{{ $product->brand }}</a>
@@ -119,7 +128,7 @@
                     </tr>
                     <tr>
                         <td class="product-infor-lable">
-                            @lang('Address')
+                            <b>@lang('Address')</b>
                         </td>
                         <td class="product-infor-value">
                             <a href="#">{{ $product->getAddress() }}</a>
@@ -127,7 +136,7 @@
                     </tr>
                 </table>
                 <div class="product-description">
-                    <span>@lang('client.product.description')</span>
+                    <b class="d-block mb-2">@lang('client.product.description')</b>
                     <p class="product-description-content mb-0">
                         {{ $product->detail }}
                     </p>
@@ -145,7 +154,7 @@
                 <div class="owner-infor">
                     <div>
                         <label for="owner-name">
-                            @lang('client.product.postedby')
+                            <b>@lang('client.product.postedby')</b>
                         </label>
                         <span name="owner-name">
                             <a href="{{ route('client.profile', ['user' => $product->user]) }}">{{ $product->user->name }}</a>
@@ -153,7 +162,9 @@
                     </div>
                     <div>
                         <label for="owner-address">
-                            @lang('client.product.address')
+                            <b>
+                                @lang('client.product.address')
+                            </b>
                         </label>
                         <span name="owner-address">{{ $product->user->address }}</span>
                     </div>
