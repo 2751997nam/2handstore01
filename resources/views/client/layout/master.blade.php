@@ -31,10 +31,7 @@
     @auth
         @include('chat')
     @endauth
-    <script src="{{ asset('js/app.js') }}"></script>
-    <script src="{{ asset('js/client/chat.js') }}"></script>
-    @include('client.assets.js')
-    
+    @include('client.assets.js')   
     @include('client.notify')
 
     @yield('js')

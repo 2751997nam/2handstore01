@@ -27,7 +27,7 @@ class CategorySeeder extends Seeder
             Category::create([
                 'name' => $value,
                 'slug' => str_slug($value),
-                'thumbnail' => config('site.thumbnail') . 'cate' . $i . '.jpeg',
+                'thumbnail' => config('site.thumbnail') . 'cate' . $i++ . '.jpeg',
                 'parent_id' => null
             ]);
         }
