@@ -129,13 +129,10 @@ Route::group([
         Route::get('/search', 'ProductController@search')->name('search');
         Route::get('/results', 'ProductController@result')->name('search_results');
         Route::get('/province', 'ProductController@getSearchProvince')->name('get_search_province');
-<<<<<<< HEAD
         Route::get('get-image/{product}', 'Client\ProductController@getImages')->name('get-image');
         Route::post('delete-image', 'Client\ProductController@deleteImage')->name('delete-image');
         Route::put('{product}/update', 'Client\ProductController@update')->name('update');
         Route::put('quantity', 'Client\ProductController@changeQuantity')->name('quantity');
-=======
->>>>>>> fix images
     });
     Route::post('/report/{id}', 'ReportController@store')->name('report.store')->middleware('auth');
     Route::delete('/comment/destroy/{id}', 'CommentController@clientDestroy')->name('destroy_comment')->middleware('auth');

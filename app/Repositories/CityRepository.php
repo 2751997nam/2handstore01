@@ -11,6 +11,8 @@ class CityRepository extends EloquentRepository
 
     public function cities()
     {
+        $this->makeModel();
+
         return $this->orderBy('name', 'asc')->pluck('name', 'id')->all();
     }
 }

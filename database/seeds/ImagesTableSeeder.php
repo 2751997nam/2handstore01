@@ -16,7 +16,7 @@ class ImagesTableSeeder extends Seeder
         $faker = Faker\Factory::create();
         for ($i = 26; $i<= 50; $i++) {
             Image::create([
-                'file_name' => 'product' . $i . '.jpeg',
+                'file_name' => config('site.product') . 'product' . $i . '.jpeg',
                 'product_id' => Product::get()->random()->id
             ]);
         }

@@ -11,14 +11,18 @@ class CategoryRepository extends EloquentRepository
 
     public function arrayCategories()
     {
-        return $this->where('parent_id', '=', null)
+        $this->makeModel();
+
+        return $this->model->where('parent_id', '=', null)
                 ->pluck('name', 'id')
                 ->toArray();
     }
 
     public function findBySlug($slug)
     {
-        $category = $this->where('slug', $slug)->first();
+        $this->makeModel();
+
+        $category = $this->model->where('slug', $slug)->first();
         if ($category) {
             return $category;
         }

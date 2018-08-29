@@ -73,7 +73,8 @@ class Product extends Model
 
     public function thumbnail()
     {
-        return asset(config('site.thumbnail') . $this->thumbnail);
+        $url = config('site.thumbnail') . $this->thumbnail;
+        return asset(file_exists($url) ? $url : config('site.thumbnail') . 'default.jpeg');
     }
 
     public function status()

@@ -13,7 +13,8 @@ class Slider extends Model
 
     public function getImage()
     {
-        return asset('storage/slides/' . $this->image);
+        $url = config('site.slider') . $this->image;
+        return asset(file_exists($url) ? $url : config('site.slider') . 'default.jpeg');
     }
 
     public function link()

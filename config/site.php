@@ -19,7 +19,6 @@ return [
         'logo',
         'favicon'
     ],
-    'slider' => 'public/slides',
     'discard' => -1,
     'inactive' => 0,
     'product' => 'storage/product/',

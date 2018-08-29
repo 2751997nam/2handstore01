@@ -19,7 +19,8 @@ class ProductSeeder extends Seeder
             Product::create([
                 'name' => $faker->sentence(),
                 'price' => rand(100000, 50000000),
-                'thumbnail' => 'product' . rand(1, 25) . '.jpeg',
+                'thumbnail' => config('site.thumbnail') . 'product' . rand(1, 25) . '.jpeg',
+                'brand' => $faker->company,
                 'detail' => $faker->paragraph(),
                 'status' => rand(0, 1),
                 'user_id' => rand(2, 43),

@@ -22,7 +22,8 @@ class Option extends Model
         if (count($options) > 0) {
             foreach ($options as $option) {
                 if (in_array($option->key, config('site.assets'))) {
-                    $data[$option->key] = url(config('site.folder') . $option->value);
+                    $url = config('site.folder') . $option->value;
+                    $data[$option->key] = url(file_exists($url) ? $url : config('site.folder') . $option->key . '.png');
                 } else {
                     $data[$option->key] = $option->value;
                 }

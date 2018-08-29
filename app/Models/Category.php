@@ -31,7 +31,8 @@ class Category extends Model
 
     public function getThumbnail()
     {
-        return url($this->thumbnail);
+        $url = $this->thumbnail;
+        return url(file_exists($url) ? $url : config('site.thumbnail') . 'default.jpeg');
     }
 
     public function scopeParentCategories($query)
